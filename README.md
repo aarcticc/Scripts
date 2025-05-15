@@ -1,6 +1,6 @@
 # My Scripts
 
-[![License: MIT](https://github.com/aarcticc/My-Scripts/blob/main/LICENSE)](./LICENSE)
+![Static Badge](https://img.shields.io/badge/MIT-%20green?label=LICENSE&link=https%3A%2F%2Fgithub.com%2Faarcticc%2FMy-Scripts%2Fblob%2Fmain%2FLICENSE)
 
 ## Overview
 
