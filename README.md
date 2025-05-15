@@ -1,6 +1,6 @@
 # My Scripts
 
-[![License: MIT](https://img.shields.io/github/license/aarcticc/My-Scripts.svg)](./LICENSE)
+[![License: MIT](https://github.com/aarcticc/My-Scripts/blob/main/LICENSE)](./LICENSE)
 
 ## Overview
 
