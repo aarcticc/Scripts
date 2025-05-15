@@ -1,5 +1,7 @@
 # My Scripts
 
+[![License: MIT](https://img.shields.io/github/license/aarcticc/My-Scripts.svg)](./LICENSE)
+
 ## Overview
 
 This repository, **My Scripts**, represents a curated collection of pragmatic automation and utility scripts developed to accelerate workflows, optimize system operations, and enhance productivity across diverse environments. Each script embodies a solution-oriented approach, leveraging cross-platform compatibility where feasible, with a particular focus on scalable, maintainable, and reusable codebases.
