@@ -4,7 +4,7 @@
 
 ## Overview
 
-This repository, **My Scripts**, represents a curated collection of pragmatic automation and utility scripts developed to accelerate workflows, optimize system operations, and enhance productivity across diverse environments. Each script embodies a solution-oriented approach, leveraging cross-platform compatibility where feasible, with a particular focus on scalable, maintainable, and reusable codebases.
+This repo is for all the bad optimized, half written and late at night compiled dogshit I have.
 
 ---
 
@@ -12,12 +12,10 @@ This repository, **My Scripts**, represents a curated collection of pragmatic au
 
 | Folder/File         | Description                                      |
 |---------------------|------------------------------------------------|
-| `keygen/`           | RSA key generation scripts leveraging native APIs without external dependencies. |
+| `keygen/`           | A small C program for generating RSA keys. |
 | `placeholder/`     |  |
 | `placeholder/`           |             |
-| `README.md`          | This documentation file providing repo insights.|
-
-*Note: Folder names and structure may evolve based on iterative development and integration.*
+| `README.md`          | The documentation file providing repo insights.|
 
 ---
 
