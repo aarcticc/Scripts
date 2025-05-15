@@ -70,8 +70,7 @@ For questions or support requests, open an issue or contact the maintainer direc
 
 ---
 
-**My Scripts is continuously evolving — your feedback and contributions drive the innovation roadmap.
-Let’s automate smarter, not harder.**
+**My Scripts is continuously evolving — your feedback and contributions drive the innovation roadmap.**
 
 
 
