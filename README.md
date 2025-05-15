@@ -8,15 +8,6 @@ This repository, **My Scripts**, represents a curated collection of pragmatic au
 
 ---
 
-## Value Proposition
-
-- **Automation at Scale:** Streamline repetitive tasks and minimize manual overhead through reliable scripting solutions.
-- **Cross-Platform Ready:** While many scripts are designed for Windows and Linux ecosystems, modularity allows for easy adaptation.
-- **Transparency & Maintainability:** Clean, well-commented source code designed for rapid onboarding and extensibility.
-- **Innovation-Driven:** Employs best practices and leverages native APIs and open-source tools to ensure high performance with minimal dependencies.
-
----
-
 ## Repository Structure
 
 | Folder/File         | Description                                      |
