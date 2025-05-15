@@ -22,8 +22,8 @@ This repository, **My Scripts**, represents a curated collection of pragmatic au
 | Folder/File         | Description                                      |
 |---------------------|------------------------------------------------|
 | `keygen/`           | RSA key generation scripts leveraging native APIs without external dependencies. |
-| `system_tools/`     | Scripts for system info extraction and monitoring. |
-| `network/`           | Networking utilities and automation.            |
+| `placeholder/`     |  |
+| `placeholder/`           |             |
 | `README.md`          | This documentation file providing repo insights.|
 
 *Note: Folder names and structure may evolve based on iterative development and integration.*
