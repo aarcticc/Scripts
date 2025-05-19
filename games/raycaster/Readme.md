@@ -75,5 +75,6 @@ int map_data[5][5] = {
 MIT License
 
 ## Credits
-
+ChatGPT-4.1
+Claude 3.5 Sonnet
 Inspired by classic raycasting tutorials and open-source projects.
