@@ -4,7 +4,7 @@
 
 ## Overview
 
-This repo is for all the bad optimized, half written and late at night compiled dogshit I have. Note: the venv directory is only temporary
+This repo is for all the bad optimized, half written and late at night compiled dogshit I have.
 
 ---
 
