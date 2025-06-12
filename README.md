@@ -46,10 +46,5 @@ Fork, branch, and submit pull requests to the main branch with descriptive commi
 
 For questions or support requests, open an issue or contact the maintainer directly via GitHub.
 
----
-
-**My Scripts is continuously evolving — your feedback and contributions drive the innovation roadmap.**
-
-
 
 
