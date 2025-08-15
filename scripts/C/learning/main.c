@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include "stdio.h"
 
 int main(){
-    
-    return 0;
+	EOF;
+	printf("%d", EOF);
+	
+	return 0;
 }
