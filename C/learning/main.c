@@ -1,36 +1,24 @@
-<<<<<<< HEAD
-#include <stdio.h>
-#include <string.h>
+// stdio.h includet in main.h
+#include "main.h"
+
+// calculator with menu
+
+// menu function
 
 int main(){
-    
-
-    return 0;
-}
-=======
-#include "stdio.h"
-
-// menu with seletcion
-
-int showMenu(){
-	int selection;
-
-	printf("###### Welcome ######\n");
-	printf("#### (0) Menu #1 ####\n");
-	printf("#### (1) Menu #2 ####\n");
-	scanf("%d", &selection);
+	float number[32];
+	char operator[32];
 	
-	if(selection == 0 || selection == 1){
-		return selection;
-	} else {
-		printf("Eingabe Ungültig!\n");
-		return showMenu();
+	// printf and scanf for asking how many numbers to input and how many operators
+	printf("What is the first number?\n");
+
+	int i = 0;
+	if (number[i] != 0){
+		++i;
+		printf("What is the next number?\n");
 	}
-}
 
-int main(){
-	showMenu();
-	
+	// if for each operator +, -, *, /
+	// int selection
 	return 0;
 }
->>>>>>> refs/remotes/origin/main
