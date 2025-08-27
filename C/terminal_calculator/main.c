@@ -70,88 +70,72 @@ void displayHistory() {
  * Starts the calculator for new calculations
  */
 void startCalculator() {
-    double result = 0;
-    i = 0;
-    char input[100];
+    char expr[100];
+    double result;
+    
+    printf("Enter expression (e.g., 324.56/34*67+2): ");
+    scanf("%s", expr);
+    
+    result = parseExpression(expr);
+    
+    displayResult(result);
+    results[history_count++] = result;
+}
 
-    // Main calculation loop
-    while (i < MAX_OPERATIONS) {
-        // Handle first number input differently
-        if (i == 0) {
-            printf("Enter first number: ");
-            if (scanf("%lf", &number[i]) != 1) {
-                printf("\n╔════════════════════════════════════╗");
-                printf("\n║           ERROR: Input            ║");
-                printf("\n║     Invalid number format!        ║");
-                printf("\n║     Please enter a valid number   ║");
-                printf("\n╚════════════════════════════════════╝\n\n");
-                while (getchar() != '\n');  // Clear invalid input
-                sleep(2);
-                continue;
+/**
+ * Parses and calculates the result of a given expression
+ * @param expr The expression to parse and calculate
+ * @return The result of the calculation
+ */
+double parseExpression(char* expr) {
+    double num = 0, stack[MAX_OPERATIONS];
+    char op = '+';
+    int stack_top = 0;
+    
+    for (int j = 0; expr[j]; j++) {
+        if (expr[j] >= '0' && expr[j] <= '9' || expr[j] == '.') {
+            num = num * 10 + (expr[j] - '0');
+        } else {
+            // Process operator
+            switch (op) {
+                case '+': stack[stack_top++] = num; break;
+                case '-': stack[stack_top++] = -num; break;
+                case '*': stack[stack_top-1] *= num; break;
+                case '/': 
+                    if (num == 0) {
+                        printf("\n╔════════════════════════════════════╗");
+                        printf("\n║           ERROR: Division          ║");
+                        printf("\n║      Cannot divide by zero         ║");
+                        printf("\n╚════════════════════════════════════╝\n\n");
+                        return 0;
+                    }
+                    stack[stack_top-1] /= num;
+                    break;
             }
-        } else {
-            // Show current result for continuing calculations
-            printf("Current result: %.2f\n", result);
+            num = 0;
+            op = expr[j];
         }
-
-        // Clear input buffer to prevent issues with subsequent inputs
-        while (getchar() != '\n');
-        
-        // Get operator from user
-        printf("Enter operator (+, -, *, /) or 'q' to quit: ");
-        scanf(" %c", &operator[i]);
-
-        // Check for quit condition
-        if (operator[i] == 'q') {
-            break;
-        }
-
-        // Validate operator input
-        if (!validateOperator()) {
-            continue;  // Skip this iteration if operator is invalid
-        }
-
-        // Get the second number
-        printf("Enter next number: ");
-        if (scanf("%lf", &number[i + 1]) != 1) {
-            printf("\n╔════════════════════════════════════╗");
-            printf("\n║           ERROR: Input             ║");
-            printf("\n║     Invalid number format!         ║");
-            printf("\n║     Please enter a valid number    ║");
-            printf("\n╚════════════════════════════════════╝\n\n");
-            while (getchar() != '\n');  // Clear invalid input
-            sleep(2);
-            continue;
-        }
-
-        // Check for division by zero
-        if (operator[i] == '/' && number[i + 1] == 0) {
-            printf("\n╔════════════════════════════════════╗");
-            printf("\n║           ERROR: Division          ║");
-            printf("\n║      Cannot divide by zero,        ║", number[i]);
-            printf("\n║      Operation will be skipped     ║");
-            printf("\n╚════════════════════════════════════╝\n\n");
-            sleep(2);  // Give user time to read the error
-            continue;
-        }
-
-        // Perform calculation
-        if (i == 0) {
-            // First calculation uses both input numbers
-            result = calculate(number[i], number[i + 1], operator[i]);
-        } else {
-            // Subsequent calculations use previous result and new number
-            result = calculate(result, number[i + 1], operator[i]);
-        }
-
-        // Display the result
-        displayResult(result);
-        results[history_count++] = result;  // Store the result in history
-        i++;  // Move to next operation
     }
-
-    // Show final result when calculations are complete
-    printf("\nFinal result: %.2f\n\n", result);
+    
+    // Process last number
+    if (op == '+') stack[stack_top++] = num;
+    else if (op == '-') stack[stack_top++] = -num;
+    else if (op == '*') stack[stack_top-1] *= num;
+    else if (op == '/') {
+        if (num == 0) {
+            printf("Error: Division by zero!\n");
+            return 0;
+        }
+        stack[stack_top-1] /= num;
+    }
+    
+    // Sum up all numbers in stack
+    result = 0;
+    for (int j = 0; j < stack_top; j++) {
+        result += stack[j];
+    }
+    
+    return result;
 }
 
 /**
@@ -186,6 +170,22 @@ double calculate(double num1, double num2, char op) {
         case '/': return num1 / num2;  // Division
         default: return 0;             // Should never reach here due to validation
     }
+}
+
+/**
+ * Displays the calculation result
+ * @param result The result to display
+ */
+void displayResult(double result) {
+    printf("= %.2f\n\n", result);
+}
+
+/**
+ * Clears the screen
+ */
+void clearScreen() {
+    printf("\033[2J\033[H");  // ANSI escape sequence to clear screen
+}
 }
 
 /**
