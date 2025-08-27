@@ -60,4 +60,10 @@ void startCalculator(void);
  */
 void clearScreen(void);
 
+/**
+ * Validates numeric input
+ * @return true if input is valid number, false otherwise
+ */
+bool validateNumber(void);
+
 #endif

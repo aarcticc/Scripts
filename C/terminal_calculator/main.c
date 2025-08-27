@@ -43,7 +43,7 @@ void displayMenu() {
     printf("╠════════════════════════╣\n");
     printf("║ (0) Start Calculator   ║\n");
     printf("║ (1) View Calc History  ║\n");
-    printf("║ (2) Exit              ║\n");
+    printf("║ (2) Exit               ║\n");
     printf("╚════════════════════════╝\n");
     printf("\nEnter your choice: ");
 }
@@ -72,13 +72,23 @@ void displayHistory() {
 void startCalculator() {
     double result = 0;
     i = 0;
+    char input[100];
 
     // Main calculation loop
     while (i < MAX_OPERATIONS) {
         // Handle first number input differently
         if (i == 0) {
             printf("Enter first number: ");
-            scanf("%lf", &number[i]);
+            if (scanf("%lf", &number[i]) != 1) {
+                printf("\n╔════════════════════════════════════╗");
+                printf("\n║           ERROR: Input            ║");
+                printf("\n║     Invalid number format!        ║");
+                printf("\n║     Please enter a valid number   ║");
+                printf("\n╚════════════════════════════════════╝\n\n");
+                while (getchar() != '\n');  // Clear invalid input
+                sleep(2);
+                continue;
+            }
         } else {
             // Show current result for continuing calculations
             printf("Current result: %.2f\n", result);
@@ -103,14 +113,23 @@ void startCalculator() {
 
         // Get the second number
         printf("Enter next number: ");
-        scanf("%lf", &number[i + 1]);
+        if (scanf("%lf", &number[i + 1]) != 1) {
+            printf("\n╔════════════════════════════════════╗");
+            printf("\n║           ERROR: Input             ║");
+            printf("\n║     Invalid number format!         ║");
+            printf("\n║     Please enter a valid number    ║");
+            printf("\n╚════════════════════════════════════╝\n\n");
+            while (getchar() != '\n');  // Clear invalid input
+            sleep(2);
+            continue;
+        }
 
         // Check for division by zero
         if (operator[i] == '/' && number[i + 1] == 0) {
             printf("\n╔════════════════════════════════════╗");
             printf("\n║           ERROR: Division          ║");
-            printf("\n║   Cannot divide by zero (%.2f/0)   ║", number[i]);
-            printf("\n║     Operation will be skipped      ║");
+            printf("\n║      Cannot divide by zero,        ║", number[i]);
+            printf("\n║      Operation will be skipped     ║");
             printf("\n╚════════════════════════════════════╝\n\n");
             sleep(2);  // Give user time to read the error
             continue;
