@@ -1,8 +1,6 @@
 #include <stdio.h>
-#incldue <string.h>
 
-int main(int ){
-    
-    
+int main(){
+    printf("Hello World!\n");
     return 0;
 }
