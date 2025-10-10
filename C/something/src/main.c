@@ -2,6 +2,7 @@
 #include "bookshelf.h"
 
 int main() {
+	char bookshelf [100][256];
 	start(mainMenu());
 
 	return 0;
@@ -9,22 +10,18 @@ int main() {
 
 void start(int nextIndex /*to be declared*/, char ) {
 	switch(mainMenu) {
-		case 0: 
+		case 0:
+			listAllBooks();
 			break;
-
 		case 1:
 			break;
-
+			bookCount();
 		case 2:
 			break;
-
-		case 3:
-			break;
-
+			addBook();
 		default:
-			printf(ERROR) // maybe change		
+			printf("ERROR"); // maybe change		
 	}
-
 }
 
 void mainMenu() {
@@ -40,7 +37,7 @@ void mainMenu() {
 	printf("What do you want to do?: \n");
 	scanf("%d", &selection);
 	printf("\n\n");
-	if(selection == 0 || selection == 1 || selection == 2 || selection == 3 || selection == 4) {
+	if(selection == 0 || selection == 1 || selection == 2) {
 		return selection;
 	} else {
 		printf("This is not a valid option!\n");

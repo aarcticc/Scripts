@@ -6,6 +6,7 @@
     "python.testing.pytestEnabled": true,
     "files.associations": {
         "stdio.h": "c",
-        "LOCALECO.C": "cpp"
+        "LOCALECO.C": "cpp",
+        "stdbool.h": "c"
     }
 }

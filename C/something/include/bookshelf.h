@@ -3,6 +3,5 @@
 
 #ifdef
 #define BOOL YESNO
-char bookshelf [100][256];
 
 #endif
