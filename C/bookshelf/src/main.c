@@ -1,34 +1,37 @@
 #include <stdio.h>
 #include "bookshelf.h"
 
-int main() {
+int main()
+{
 	char bookshelf [100][256];
 	start(mainMenu());
 
 	return 0;
 }
 
-void start(int nextIndex /*to be declared*/, char ) {
+void start(int nextIndex /*to be declared*/, char )
+{
 	switch(mainMenu) {
-		case 0:
-			listAllBooks();
-			break;
-		case 1:
-			break;
-			bookCount();
-		case 2:
-			break;
-			addBook();
-		default:
-			printf("ERROR"); // maybe change		
+	case 0:
+		listAllBooks();
+		break;
+	case 1:
+		bookCount();
+		break;
+	case 2:
+		addBook();
+		break;
+	default:
+		printf("ERROR"); // maybe change		
 	}
 }
 
-void mainMenu() {
+void mainMenu()
+{
 	int selection;
 
 	printf("------------------------------\n");
-	printf("------(0)-LIST-ALL-BOOKS------\n"); // sort authors in submenu
+	printf("------(0)-LIST-ALL-BOOKS------\n"); // with authors
 	printf("------(1)-DISPLAY-BOOK-COUNT--\n");
 	printf("------(2)-ADD-BOOK------------\n");
 	printf("------(3)-EXIT----------------\n");
