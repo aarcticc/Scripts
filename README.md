@@ -44,7 +44,7 @@ Fork, branch, and submit pull requests to the main branch with descriptive commi
 
 # Contact & Support
 
-For questions or support requests, open an issue or contact the maintainer directly via GitHub.
+For questions or support requests, open an issue or contact me via aaarcticcc@proton.me
 
 
 
