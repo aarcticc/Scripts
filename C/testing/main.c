@@ -1,24 +1,31 @@
 #include <stdio.h>
 
-int main() {
-    int normalInt = 1000;                       // standard int 
-    double normalDouble = 3.14;                 // standard double
+int main() 
+{
 
-    short int small = -100;                     // smaller int
-    unsigned int count = 25;                    // only positive int
-    long int big = 1234567890;                  // larger int
-    long long int veryBig = 9223372036854775807; // very large int
-    unsigned long long int huge = 18446744073709551615U; // very large, only positive
-    long double precise = 3.141592653589793238L; // extended precision
+        char operator;
+        double first, second;
+        printf("Enter an operator (+, -, *, /): ");
+        scanf("%c", &operator);
+        printf("Enter two operands: ");
+        scanf("%lf %lf", &first, &second);
 
-    printf("Normal int: %d\n", normalInt);
-    printf("Normal double: %lf\n", normalDouble);
-    printf("Small: %hd\n", small);
-    printf("Count: %u\n", count);
-    printf("Big: %ld\n", big);
-    printf("Very Big: %lld\n", veryBig);
-    printf("Huge: %llu\n", huge);
-    printf("Precise: %Lf\n", precise);
+        switch (operator) {
+        case '+':
+                printf("%.2lf + %.2lf = %.2lf", first, second, first + second);
+                break;
+        case '-':
+                printf("%.2lf - %.2lf = %.2lf", first, second, first - second);
+                break;
+        case '*':
+                printf("%.2lf * %.2lf = %.2lf", first, second, first * second);
+                break;
+        case '/':
+                printf("%.2lf / %.2lf = %.2lf", first, second, first / second);
+                break;
+        default:
+                printf("Error! Operator is not correct.");
+        }
 
-    return 0;
+        return 0;
 }
