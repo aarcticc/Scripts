@@ -2,30 +2,12 @@
 
 int main() 
 {
-
-        char operator;
-        double first, second;
-        printf("Enter an operator (+, -, *, /): ");
-        scanf("%c", &operator);
-        printf("Enter two operands: ");
-        scanf("%lf %lf", &first, &second);
-
-        switch (operator) {
-        case '+':
-                printf("%.2lf + %.2lf = %.2lf", first, second, first + second);
-                break;
-        case '-':
-                printf("%.2lf - %.2lf = %.2lf", first, second, first - second);
-                break;
-        case '*':
-                printf("%.2lf * %.2lf = %.2lf", first, second, first * second);
-                break;
-        case '/':
-                printf("%.2lf / %.2lf = %.2lf", first, second, first / second);
-                break;
-        default:
-                printf("Error! Operator is not correct.");
-        }
+    int num;
+    
+    int i = num;
+    for (i = 0; i < 5; ++i) {
+        printf("%d", i);
+    }
 
         return 0;
 }
