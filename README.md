@@ -1,4 +1,4 @@
-# My Scripts
+# Scripts
 
 ![Static Badge](https://img.shields.io/badge/MIT-%20green?label=LICENSE&link=https%3A%2F%2Fgithub.com%2Faarcticc%2FMy-Scripts%2Fblob%2Fmain%2FLICENSE)
 
@@ -13,7 +13,7 @@ This repo is for all the bad optimized, half written and late at night compiled 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/aarcticc/My-Scripts.git
+   git clone https://github.com/aarcticc/Scripts.git
    cd My-Scripts
 
 2. **Prerequisites**
